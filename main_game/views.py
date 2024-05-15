@@ -5,9 +5,8 @@ from django.core.paginator import Paginator
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import BasePermission
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.response import Response
-from rest_framework import status
 
+from .forms import Registration
 from .models import Club, BoardGame, GameSet, Address, Genre
 from .serializers import ClubSerializer, BoardGameSerializer, GameSetSerializer, AddressSerializer, GenreSerializer
 
@@ -58,9 +57,8 @@ def create_view(model_class, context_name, template):
 сlub_view = create_view(Club, 'club', 'entities/club.html')
 boardgame_view = create_view(BoardGame, 'boardgame', 'entities/boardgame.html')
 gameset_view = create_view(GameSet, 'gameset', 'entities/gameset.html')
-addressListView = create_view(Address, 'address', 'entities/addresses.html')
-genreListView = create_view(Genre, 'genre', 'entities/genres.html')
-
+address_view = create_view(Address, 'address', 'entities/addresses.html')
+genre_view = create_view(Genre, 'genre', 'entities/genres.html')
 
 class MyPermission(BasePermission):
     _safe_methods = 'GET', 'HEAD', 'OPTIONS', 'PATCH'

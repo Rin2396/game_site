@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 import re
+from django.conf.global_settings import AUTH_USER_MODEL
 
 
 NAME_MAX_LEN = 100

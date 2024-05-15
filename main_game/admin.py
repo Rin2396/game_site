@@ -38,7 +38,7 @@ class GameSetAdmin(admin.ModelAdmin):
 class ClubAdmin(admin.ModelAdmin):
     model = Club
     search_fields = ['name', 'address', 'phone_number']
-    inlines = (ClubToGameInline,)
+    inlines = (ClubToGameInline, ClubAddressInline)
 
 
 @admin.register(Address)

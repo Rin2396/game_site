@@ -100,7 +100,7 @@ DATABASES = {
         'PASSWORD': getenv('PG_PASSWORD'),
         'HOST': getenv('PG_HOST'),
         'PORT': getenv('PG_PORT'),
-        # 'OPTIONS': {'options': '-c search_path=public, django_project'},
+        'OPTIONS': {'options': '-c search_path=public,game_site'},
         'TEST': {
             'NAME': 'test_db',
         },
